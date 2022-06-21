@@ -43,5 +43,8 @@
     "webpack": "^5.72.1",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.1"
+  },
+  "dependencies": {
+    "hamburgers": "^1.2.1"
   }
 }
