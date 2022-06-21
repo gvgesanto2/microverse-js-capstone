@@ -1,0 +1,15 @@
+// Color Pallete
+$color-primary: blue;
+
+// Breakpoints
+$breakpoints: (
+  // 100em = 1600px
+  'screen-hg': 100em,
+  // 160em = 2560px
+  'screen-xhg': 160em
+);
+
+$bp-types: (
+  'max': max-width,
+  'min': min-width,
+);

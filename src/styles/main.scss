@@ -1,0 +1,12 @@
+// Import variables and functions
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// Import Base styles
+@import 'base';
+
+// Import components classes
+// example: @import components/name_of_the_file
+
+// Import the layout classes
+@import 'layout';
