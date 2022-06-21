@@ -14,8 +14,10 @@ html {
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
-  background-color: $color-primary;
+  background-color: $black;
+  color: $text-color;
 }
 
 a {
