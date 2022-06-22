@@ -39,7 +39,8 @@ textarea {
 
 // Header
 .logo {
-  width: 6.5rem;
+  width: 7.5rem;
+  padding-top: 0.5rem;
 }
 
 h2 {
@@ -52,121 +53,246 @@ html, body {
   height: 100%;
 }
 
-* {
-  font-family: "Roboto";
-  box-sizing: border-box;
-}
 // Hamburguer
-.top-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+
+.topnav {
   background-color: $color-gray-700;
-  height: 70px;
-  padding: 1em;
-}
-
-h2 {
-  vertical-align: center;
-  text-align: center;
-}
-
-html, body {
-  margin: 0;
-  height: 100%;
-}
-
-* {
-  font-family: "Roboto";
-  box-sizing: border-box;
-}
-
-.menu {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu > li {
-  margin: 0 1rem;
   overflow: hidden;
+  height: 70px;
+  
 }
 
-.top-nav__button-container {
-  display: none;
-  height: 100%;
-  width: 30px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
-#menu-toggle {
-  display: none;
-}
-
-.top-nav__button,
-.top-nav__button::before,
-.top-nav__button::after {
+.topnav a {
+  float: right;
   display: block;
-  background-color: #fff;
-  position: absolute;
-  height: 4px;
-  width: 30px;
-  border-radius: 2px;
+  color: $color-white;
+  text-align: center;
+  padding: 25px 33px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.top-nav__button::before {
-  content: '';
-  margin-top: -8px;
+.topnav a:hover {
+  background-color: $color-white;
+  color: $color-gray-900;
 }
 
-.top-nav__button::after {
-  content: '';
-  margin-top: 8px;
+.topnav a.active {
+  background-color: $color-primary-300;
+  color: white;
 }
 
-@media (max-width: 700px) {
-  .top-nav__button-container {
-    display: flex;
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
   }
-  .menu {
+}
+
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
     position: absolute;
+    right: 0;
     top: 0;
-    margin-top: 50px;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
   }
-  #menu-toggle ~ .menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
   }
- 
-
 }
 // end of hamburguer
 
+//cards
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(37.5rem, 20rem));
+  justify-content: space-evenly;
+}
+
+.container{
+  width:100%;
+  height:100%;
+  
+
+  justify-content: center;
+}
+.movie-container{  
+  width:37.5rem;
+  height:650px;
+  background-color:$color-gray-900;
+  margin : 60px auto 0 auto;
+  box-shadow:5px 5px 115px -14px black;
+  border-radius: 4px;
+}
+
+
+.movie-img {
+  width:100%;
+  height:380px;
+ background-image: url(https://i.ibb.co/FDGqCmM/papers-co-ag74-interstellar-wide-space-film-movie-art-33-iphone6-wallpaper.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  z-index:111 !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+position:relative;
+
+}
+
+.movie{
+
+  position:absolute;
+  background-size: contain;
+  background-size: cover;
+  z-index:1 !important;
+  width:375px;
+  height:660px;
+  display:block;
+  border-radius:4px;
+}
+
+.text-movie-cont{
+  padding:0px 12px;
+  text-align: justify;
+}
+
+
+
+h1,h2, {
+  font-family:'Roboto';
+  color:$color-white;
+  margin:0px;
+}
+
+h1 {
+  font-size:$text-movie-title;
+  font-weight:$font-regular;
+}
+
+
+.movie-likes{
+
+display: flex;
+align-items: center;
+justify-content: flex-end;
+  li{
+    color:$color-gray-200;
+    &:last-child {
+        margin-right: 0px;
+    }
+    i{
+      font-size:14px;
+      margin-right:4px;
+      position: relative;
+      float: left;
+      line-height: 1;
+    }
+  }  
+}
+
+.button {
+background: transparent;
+border: none;
+}
+
+#like {
+width: 3rem;
+size: 1rem;
+}
+
+.movie-details {
+  font-family:$paragraph-font-family;
+  font-size:$text-summary;
+  font-weight:$light;
+  color:darken( $color-white, 20% );
+  
+}
+
+.movie-description {
+  font-family:$paragraph-font-family;
+  font-size:$text-movie-description;
+  font-weight:$regular;
+  color:darken( $color-white, 30% );  
+  text-align: justify;
+  line-height: 1.3;
+}
+
+.movie-actors {
+  font-family:$paragraph-font-family;
+  font-size:$text-summary;
+  font-weight:$light;
+  color:$color-white;
+  font-style: italic;
+ 
+}
+
+/* TYPOGRAPHY ENDS */
+
+/** GRID STARTS **/
+
+.thegrid { margin: 0 auto; }
+
+
+
+.mr-grid { width: 100%; }
+    .mr-grid:before, .mr-grid:after { content: ""; display: table; }
+    .mr-grid:after { clear: both; }
+    .mr-grid { *zoom: 1; }
+
+.col1, .col2, .col3, .col3rest,{ 
+	margin:0% 0.5% 0.5% 0.5%;
+    padding:1%;
+    float: left;
+    display: block;
+}
+
+.col1 { width: 98%; }
+.col2 { width: 47%; }
+
+
+	
+
+
+.commentbtn {
+  width: 21rem;
+font-size: 3rem;
+margin-left: 6rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background-color: #1f1f1f;
+  color: #5799ef;
+  outline: 1px solid #121212;
+}
+@media screen and (min-width: 600px) { 
+  .container {
+  
+  }
+}
+// end of cards
+
 // Footer
 footer {
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
-  position: fixed;
-  bottom: 0;
+  display: flex;
+  justify-content: center;
+  position:fixed;
+  font-size: 2rem;
+  bottom:0;
+  left:0;
+  right:0;
   background-color: $color-primary-300;
   z-index: 2;
-
+padding: 1rem;
   .link {
     margin-left: 1rem;
     color: $color-white;
