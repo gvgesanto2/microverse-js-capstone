@@ -12,8 +12,8 @@ html {
   font-size: 52.5%;
   box-sizing: border-box;
 
-   // screen-md = 48em = 768px
-   @include respond-to('min', 'screen-xsm') {
+  // screen-md = 48em = 768px
+  @include respond-to('min', 'screen-xsm') {
     font-size: 62.5%;
   }
 }
@@ -34,7 +34,9 @@ ul {
   list-style: none;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
   font-family: inherit;
   font-weight: inherit;
 }
