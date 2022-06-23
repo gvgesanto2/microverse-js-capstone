@@ -9,13 +9,20 @@
 
 // Base Styles
 html {
-  font-size: 62.5%;
+  font-size: 52.5%;
   box-sizing: border-box;
+
+   // screen-md = 48em = 768px
+   @include respond-to('min', 'screen-xsm') {
+    font-size: 62.5%;
+  }
 }
 
 body {
   font-size: 1.6rem;
-  background-color: $color-primary;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  background-color: $color-white;
 }
 
 a {
@@ -25,6 +32,11 @@ a {
 
 ul {
   list-style: none;
+}
+
+input, textarea, button {
+  font-family: inherit;
+  font-weight: inherit;
 }
 
 button {

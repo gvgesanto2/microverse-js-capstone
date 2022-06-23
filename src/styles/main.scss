@@ -6,7 +6,13 @@
 @import 'base';
 
 // Import components classes
-// example: @import components/name_of_the_file
+@import 'components/c-details-window';
+@import 'components/c-icon';
+@import 'components/c-icon-btn';
+@import 'components/c-bullet-list';
 
 // Import the layout classes
 @import 'layout';
+
+// Import the utilities classes
+@import 'utilities';
