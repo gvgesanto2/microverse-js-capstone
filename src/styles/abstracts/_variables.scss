@@ -22,6 +22,7 @@ $color-home-card-bg: $color-gray-700;
 $separator-line--sm: 1px solid $color-gray-750;
 $separator-line--md: 2px solid $color-gray-750;
 
+
 // Breakpoints
 $breakpoints: (
   // 20em = 320px
@@ -40,3 +41,18 @@ $bp-types: (
   'max': max-width,
   'min': min-width,
 );
+
+// text variables
+$heading-font-family: 'Roboto';
+$paragraph-font-family: 'Roboto';
+$light: 300;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+$font-regular: 400;
+$mont-bold: 700;
+
+$text-movie-title:36px;
+$text-summary:12px;
+$text-action-btn:14px;
+$text-movie-description:12px;
