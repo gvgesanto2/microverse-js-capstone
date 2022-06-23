@@ -1,3 +1,6 @@
 import '../styles/main.scss';
 
-import '../scripts/hamburguer.js'
+import toggleHamburgerMenu from './hamburguer.js';
+
+const hamburguerBtn = document.getElementById('hamburger-btn');
+hamburguerBtn.addEventListener('click', toggleHamburgerMenu);
