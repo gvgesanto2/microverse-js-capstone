@@ -20,9 +20,27 @@ const tvShowExampleData = {
     you.
   `,
   genres: ['Action', 'Crime', 'Science-Fiction'],
+  cast: [
+    {
+      actorImgUrl: 'https://static.tvmaze.com/uploads/images/medium_portrait/0/3.jpg',
+      actorName: 'Mike Vogel',
+      characterName: 'Dale "Barbie" Barbara',
+    },
+    {
+      actorImgUrl: 'https://static.tvmaze.com/uploads/images/medium_portrait/0/6.jpg',
+      actorName: 'Mike Vogel',
+      characterName: 'Dale "Barbie" Barbara',
+    },
+    {
+      actorImgUrl: 'https://static.tvmaze.com/uploads/images/medium_portrait/0/7.jpg',
+      actorName: 'Mike Vogel',
+      characterName: 'Dale "Barbie" Barbara',
+    },
+  ],
 };
 const eventHandlersObj = {
   handleClosePopup: () => { console.log('close popup'); },
+  handleToggleDropdown: () => { console.log('toggle dropdown'); },
 };
 
 const detailsPopupView = new DetailsPopupView(tvShowExampleData, eventHandlersObj);
