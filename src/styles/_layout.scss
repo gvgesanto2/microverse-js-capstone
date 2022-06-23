@@ -17,3 +17,12 @@
   padding: 2.4rem;
   margin: 0 auto;
 }
+
+// Horizontal List Layout
+.l-horizontal-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+

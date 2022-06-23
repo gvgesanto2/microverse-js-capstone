@@ -1,4 +1,5 @@
 import { createHtmlElement } from '../../utils/html.utils.js';
+import TvShowDescriptionSectionView from './TvShowDescriptionSectionView.js';
 import ViewComponent from './ViewComponent.js';
 
 export default class DetailsPopupView extends ViewComponent {
@@ -88,6 +89,10 @@ export default class DetailsPopupView extends ViewComponent {
     // Append the 'popupHeader' children
     popupHeader.appendChild(popupHeaderToolbar);
     popupHeader.appendChild(bulletListWithTvShowInfos);
+
+    // Append the 'popupContent' children
+    const tvShowDescriptionSectionView = new TvShowDescriptionSectionView(this.tvShowData);
+    tvShowDescriptionSectionView.appendToParent(popupContent);
 
     // Append the 'popupWindow' children
     popupWindow.appendChild(popupHeader);
