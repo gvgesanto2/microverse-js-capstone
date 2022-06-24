@@ -1,0 +1,42 @@
+.c-btn {
+  @include centerWithFlex;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  padding: 1rem 1.6rem;
+  border: none;
+
+  transition: all 0.2s ease 0s;
+
+  &--primary {
+    background-color: $color-primary-300;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-primary-100;
+      box-shadow: 0 0.8rem 1.6rem rgb(64 83 252 / 24%);
+    }
+  }
+
+  &--light {
+    background-color: $color-gray-150;
+    color: $color-gray-450;
+    filter: brightness(0.85);
+
+    &:hover {
+      filter: brightness(1);
+      box-shadow: 0 0.8rem 1.6rem rgb(114 114 114 / 24%);
+    }
+  }
+
+  &--full {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+  }
+}

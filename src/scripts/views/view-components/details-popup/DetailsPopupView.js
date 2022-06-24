@@ -1,18 +1,20 @@
-import { createHtmlElement } from '../../utils/html.utils.js';
-import TvShowCastSectionView from './TvShowCastSectionView.js';
-import TvShowDescriptionSectionView from './TvShowDescriptionSectionView.js';
-import ViewComponent from './ViewComponent.js';
+import CommentsSectionView from './comments-section/CommentsSectionView.js';
+import TvShowCastSectionView from './tvshow-cast-section/TvShowCastSectionView.js';
+import TvShowDescriptionSectionView from './tvshow-description-section/TvShowDescriptionSectionView.js';
+import ViewComponent from '../ViewComponent.js';
+import { createHtmlElement } from '../../../utils/html.utils.js';
 
 export default class DetailsPopupView extends ViewComponent {
   constructor(tvShowData, eventHandlersObj) {
     super();
     this.tvShowData = tvShowData;
     this.eventHandlersObj = eventHandlersObj;
+    this.commentsSectionView = null;
   }
 
   createHtmlElem = () => {
     const {
-      title, premieredYear, status, rating,
+      title, premieredYear, status, rating, comments,
     } = this.tvShowData;
 
     const popupContainer = createHtmlElement({
@@ -96,6 +98,8 @@ export default class DetailsPopupView extends ViewComponent {
     tvShowDescriptionSectionView.appendToParent(popupContent);
     const tvShowCastSectionView = new TvShowCastSectionView(this.tvShowData, this.eventHandlersObj);
     tvShowCastSectionView.appendToParent(popupContent);
+    this.commentsSectionView = new CommentsSectionView(comments, this.eventHandlersObj);
+    this.commentsSectionView.appendToParent(popupContent);
 
     // Append the 'popupWindow' children
     popupWindow.appendChild(popupHeader);
@@ -106,4 +110,8 @@ export default class DetailsPopupView extends ViewComponent {
 
     return popupContainer;
   };
+
+  refreshCommentsList = (newComments) => {
+    this.commentsSectionView?.refreshCommentsList(newComments);
+  }
 }

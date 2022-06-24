@@ -5,4 +5,8 @@
   background: transparent;
   color: $color-text;
   padding: 0.8rem;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }

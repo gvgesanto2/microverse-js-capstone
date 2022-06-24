@@ -1,5 +1,5 @@
-import { createHtmlElement } from '../../utils/html.utils.js';
-import ViewComponent from './ViewComponent.js';
+import { createHtmlElement } from '../../../../utils/html.utils.js';
+import ViewComponent from '../../ViewComponent.js';
 
 export default class TvShowDescriptionSectionView extends ViewComponent {
   constructor(tvShowData) {

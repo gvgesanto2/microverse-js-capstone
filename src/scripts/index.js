@@ -1,13 +1,19 @@
-import DetailsPopupView from './views/view-components/DetailsPopupView.js';
 import '../assets/images/sprite.svg';
 import '../styles/main.scss';
+import InvolvementApiService from './services/InvolvementApiService.js';
+import DetailsPopupController from './controllers/DetailsPopupController.js';
+
+const INVOLVEMENT_API_APP_ID = 'QniNuI3VUHCKof9OMKmJ';
+const testingId = 'testingId$898';
 
 const tvShowExampleData = {
+  id: testingId,
   title: 'Under the Dome',
   premieredYear: 2011,
   status: 'Ended',
   rating: 8.8,
-  tvShowImgUrl: 'https://static.tvmaze.com/uploads/images/original_untouched/81/202627.jpg',
+  tvShowImgUrl:
+    'https://static.tvmaze.com/uploads/images/original_untouched/81/202627.jpg',
   summary: `
     You are being watched. The government has a secret system, a machine
     that spies on you every hour of every day. I know because I built it.
@@ -22,26 +28,34 @@ const tvShowExampleData = {
   genres: ['Action', 'Crime', 'Science-Fiction'],
   cast: [
     {
-      actorImgUrl: 'https://static.tvmaze.com/uploads/images/medium_portrait/0/3.jpg',
+      actorImgUrl:
+        'https://static.tvmaze.com/uploads/images/medium_portrait/0/3.jpg',
       actorName: 'Mike Vogel',
       characterName: 'Dale "Barbie" Barbara',
+      actorBiographyUrl: 'https://www.tvmaze.com/people/1/mike-vogel',
     },
     {
-      actorImgUrl: 'https://static.tvmaze.com/uploads/images/medium_portrait/0/6.jpg',
+      actorImgUrl:
+        'https://static.tvmaze.com/uploads/images/medium_portrait/0/6.jpg',
       actorName: 'Mike Vogel',
       characterName: 'Dale "Barbie" Barbara',
+      actorBiographyUrl: 'https://www.tvmaze.com/people/2/rachelle-lefevre',
     },
     {
-      actorImgUrl: 'https://static.tvmaze.com/uploads/images/medium_portrait/0/7.jpg',
+      actorImgUrl:
+        'https://static.tvmaze.com/uploads/images/medium_portrait/0/7.jpg',
       actorName: 'Mike Vogel',
       characterName: 'Dale "Barbie" Barbara',
+      actorBiographyUrl: 'https://www.tvmaze.com/people/3/alexander-koch',
     },
   ],
 };
-const eventHandlersObj = {
-  handleClosePopup: () => { console.log('close popup'); },
-  handleToggleDropdown: () => { console.log('toggle dropdown'); },
-};
 
-const detailsPopupView = new DetailsPopupView(tvShowExampleData, eventHandlersObj);
-detailsPopupView.render('root');
+const involvementApiService = new InvolvementApiService(INVOLVEMENT_API_APP_ID);
+involvementApiService.getCommentsById(testingId).then((comments) => {
+  const detailsPopupController = new DetailsPopupController(
+    { ...tvShowExampleData, comments },
+    involvementApiService,
+  );
+  detailsPopupController.build('root');
+});

@@ -1,0 +1,15 @@
+.c-form {
+  &__input-group > *:not(:last-child) {
+    margin-bottom: 1.2rem;
+  }
+
+  &__btn-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.8rem;
+
+    & > button:not(:last-child) {
+      margin-right: 0.8rem;
+    }
+  }
+}

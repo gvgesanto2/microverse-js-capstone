@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 3.2rem;
   }
 
   &__title {
@@ -17,6 +16,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 1.2rem;
+    margin-top: 3.2rem;
 
     // screen-md = 48em = 768px
     @include respond-to('min', 'screen-sm') {
@@ -66,11 +66,6 @@
     line-height: 2rem;
     color: $color-white;
     margin-bottom: 0.4rem;
-
-    // screen-md = 48em = 768px
-    @include respond-to('min', 'screen-sm') {
-      line-height: 2.4rem;
-    }
   }
 
   &__character {
