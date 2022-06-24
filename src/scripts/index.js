@@ -2,18 +2,20 @@ import '../assets/images/sprite.svg';
 import '../styles/main.scss';
 import InvolvementApiService from './services/InvolvementApiService.js';
 import DetailsPopupController from './controllers/DetailsPopupController.js';
+import './utils/seriesCounter.js';
+import getData from './services/getdata.js';
+import showMovies from './showMovies';
+import toggleHamburgerMenu from './hamburguer.js';
 
 const INVOLVEMENT_API_APP_ID = 'QniNuI3VUHCKof9OMKmJ';
 const testingId = 'testingId$8999';
 
 const tvShowExampleData = {
-  id: testingId,
   title: 'Under the Dome',
   premieredYear: 2011,
   status: 'Ended',
   rating: 8.8,
-  tvShowImgUrl:
-    'https://static.tvmaze.com/uploads/images/original_untouched/81/202627.jpg',
+  tvShowImgUrl: 'https://static.tvmaze.com/uploads/images/original_untouched/81/202627.jpg',
   summary: `
     You are being watched. The government has a secret system, a machine
     that spies on you every hour of every day. I know because I built it.
@@ -59,3 +61,14 @@ involvementApiService.getCommentsById(testingId).then((comments) => {
   );
   detailsPopupController.build('root');
 });
+
+document.addEventListener('DOMContentLoaded', showMovies);
+
+const displayItem = async () => {
+  const movies = await getData();
+  showMovies(movies);
+};
+displayItem();
+
+const hamburguerBtn = document.getElementById('hamburger-btn');
+hamburguerBtn.addEventListener('click', toggleHamburgerMenu);
