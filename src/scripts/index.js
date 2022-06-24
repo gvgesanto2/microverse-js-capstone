@@ -1,6 +1,10 @@
 import DetailsPopupView from './views/view-components/DetailsPopupView.js';
 import '../assets/images/sprite.svg';
 import '../styles/main.scss';
+import './utils/seriesCounter.js'
+import getData from './services/getdata.js';
+import showMovies from './showMovies';
+import toggleHamburgerMenu from './hamburguer.js';
 
 const tvShowExampleData = {
     title: 'Under the Dome',
@@ -46,9 +50,7 @@ const eventHandlersObj = {
 const detailsPopupView = new DetailsPopupView(tvShowExampleData, eventHandlersObj);
 //detailsPopupView.render('root');
 
-import getData from '../scripts/services/getdata';
-import showMovies from './showMovies';
-import toggleHamburgerMenu from './hamburguer.js';
+
 document.addEventListener('DOMContentLoaded', showMovies);
 
 const displayItem = async () => {

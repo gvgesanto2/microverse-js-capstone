@@ -26,6 +26,16 @@ h2 {
 .topnav {
     background-color: $color-gray-700;
     overflow: hidden;
+  
+  }
+
+  .topnav div {
+   padding-left: 35rem;
+    color: $color-white;
+    display: inline-flex;
+    font-family: 'Roboto';
+    font-size: 3rem;
+  
   }
   
   
@@ -53,6 +63,14 @@ h2 {
     display: none;
   }
 
+  .series-counter {
+    text-align: center;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    font-size: 3.2rem;
+    color: $color-white;
+  }
+
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
@@ -73,11 +91,14 @@ h2 {
       display: block;
       text-align: left;
     }
+  
   }
+
 // end of hamburguer
 
 // Footer
 footer {
+  color: $color-white;
   display: flex;
   justify-content: center;
   position:fixed;
@@ -139,8 +160,7 @@ position:relative;
 
 .summary{
   font-size: 1rem;
-  color: $color-white;
- 
+  color: $color-white; 
 }
 .summary > p {
   height: 2rem;
@@ -148,6 +168,8 @@ position:relative;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space:nowrap;
+  font-family: 'Roboto';
+  font-size: 2rem;
 }
 
 .movie-ratings {
@@ -168,6 +190,12 @@ position:relative;
   padding-right: 5rem;
 }
 
+.fa-heart:hover {
+  color: $color-primary-400;
+  transform: scale(1.5);
+  transition: all 0.5s linear;
+}
+
 .like-btn {
   color: $color-gray-200;
   font-size: 25px;
@@ -183,23 +211,48 @@ position:relative;
 }
 
 .movie-title {
+  width: 72rem;
   color: $color-primary-300;
   padding: 4px;
   cursor: pointer;
 }
 
 .movie-comment {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  background-color: $color-primary-700;
+  border-radius: 4px;
+  background-color: $color-primary-400;
+  border: none;
   color: $color-white;
-  width: auto;
-  outline: 1px solid $color-gray-900;
-  font-size: 20px;
-  padding: 5px;
+  text-align: center;
+  font-size: 2rem;
+  padding: 0.5rem;
+  width: 104px;
+  transition: all 0.5s;
   cursor: pointer;
+  margin: 36px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.movie-comment::after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  top: 4px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.movie-comment:hover {
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+button:hover:after {
+  opacity: 1;
+  right: 10px;
 }
 
 /* media querries */
