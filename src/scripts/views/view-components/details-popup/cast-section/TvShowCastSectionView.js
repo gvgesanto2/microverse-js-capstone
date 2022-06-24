@@ -11,12 +11,14 @@ export default class TvShowCastSectionView extends ViewComponent {
     this.isCastHidden = true;
   }
 
-  handleToggleCastGrid = (castGridView) => {
+  handleToggleCastGrid = (castGridView, dropdownButton) => {
     if (this.isCastHidden) {
       castGridView.show();
+      dropdownButton.style.transform = 'rotate(90deg)';
       this.isCastHidden = false;
     } else {
       castGridView.hide();
+      dropdownButton.style.transform = 'rotate(0)';
       this.isCastHidden = true;
     }
   }
@@ -56,7 +58,7 @@ export default class TvShowCastSectionView extends ViewComponent {
     dropdownButton.addEventListener(
       'click',
       () => {
-        this.handleToggleCastGrid(castGridView);
+        this.handleToggleCastGrid(castGridView, dropdownButton);
       },
     );
 

@@ -52,9 +52,9 @@ export default class CommentsSectionView extends ViewComponent {
     this.commentsListView.appendToParent(commentsSections);
 
     if (this.initialComments.length > NUM_COMMENTS_TO_SHOW_BY_DEFAULT) {
+      this.areThereCommentsHidden = true;
       this.toggleCommentsBtn = this.#createToggleCommentsBtnElem();
       commentsSections.appendChild(this.toggleCommentsBtn);
-      this.areThereCommentsHidden = true;
     }
 
     return commentsSections;
@@ -64,7 +64,7 @@ export default class CommentsSectionView extends ViewComponent {
     const toggleCommentsBtn = createHtmlElement({
       tag: 'button',
       className: 'c-btn c-btn--primary c-btn--full',
-      text: 'show more',
+      text: this.areThereCommentsHidden ? 'show more' : 'show less',
     });
     toggleCommentsBtn.type = 'button';
     toggleCommentsBtn.addEventListener('click', () => {
@@ -91,6 +91,7 @@ export default class CommentsSectionView extends ViewComponent {
     this.commentsListView = new CommentsListView(
       newComments,
       NUM_COMMENTS_TO_SHOW_BY_DEFAULT,
+      !this.areThereCommentsHidden,
     );
     this.commentsListView.appendToParent(this.htmlElem);
     this.commentsCount.innerHTML = this.#genCommentsCountText(newComments);

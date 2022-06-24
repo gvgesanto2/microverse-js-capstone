@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const createHtmlElement = ({
   tag, className, id, style, text,
 }) => {
@@ -23,4 +22,14 @@ export const createHtmlElement = ({
   }
 
   return elem;
+};
+
+export const addClassToHtmlElement = (htmlElement, className) => {
+  htmlElement.classList.add(className);
+};
+
+export const removeClassFromHtmlElement = (htmlElement, className) => {
+  if (htmlElement.classList.contains(className)) {
+    htmlElement.classList.remove(className);
+  }
 };

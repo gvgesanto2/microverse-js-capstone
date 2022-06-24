@@ -1,6 +1,6 @@
 import CommentsSectionView from './comments-section/CommentsSectionView.js';
-import TvShowCastSectionView from './tvshow-cast-section/TvShowCastSectionView.js';
-import TvShowDescriptionSectionView from './tvshow-description-section/TvShowDescriptionSectionView.js';
+import TvShowCastSectionView from './cast-section/TvShowCastSectionView.js';
+import TvShowDescriptionSectionView from './description-section/TvShowDescriptionSectionView.js';
 import ViewComponent from '../ViewComponent.js';
 import { createHtmlElement } from '../../../utils/html.utils.js';
 

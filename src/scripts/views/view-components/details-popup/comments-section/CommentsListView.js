@@ -4,11 +4,16 @@ import CommentItemView from './CommentItemView.js';
 import ViewComponent from '../../ViewComponent.js';
 
 export default class CommentsListView extends ViewComponent {
-  constructor(comments, numCommentsToShowByDefault) {
+  constructor(
+    comments,
+    numCommentsToShowByDefault,
+    isAllCommentsShowedOnMount = false,
+  ) {
     super();
     this.comments = comments;
     this.commentItemViews = [];
     this.numCommentsToShowByDefault = numCommentsToShowByDefault;
+    this.isAllCommentsShowedOnMount = isAllCommentsShowedOnMount;
   }
 
   createHtmlElem = () => {
@@ -22,7 +27,10 @@ export default class CommentsListView extends ViewComponent {
       commentItemView.appendToParent(commentsList);
 
       addHidingFeatureToView(commentItemView);
-      if (index >= this.numCommentsToShowByDefault) {
+      if (
+        index >= this.numCommentsToShowByDefault
+        && !this.isAllCommentsShowedOnMount
+      ) {
         commentItemView.hide();
       }
 

@@ -4,7 +4,7 @@ import InvolvementApiService from './services/InvolvementApiService.js';
 import DetailsPopupController from './controllers/DetailsPopupController.js';
 
 const INVOLVEMENT_API_APP_ID = 'QniNuI3VUHCKof9OMKmJ';
-const testingId = 'testingId$898';
+const testingId = 'testingId$8999';
 
 const tvShowExampleData = {
   id: testingId,
@@ -31,20 +31,20 @@ const tvShowExampleData = {
       actorImgUrl:
         'https://static.tvmaze.com/uploads/images/medium_portrait/0/3.jpg',
       actorName: 'Mike Vogel',
-      characterName: 'Dale "Barbie" Barbara',
+      characterName: 'Dale',
       actorBiographyUrl: 'https://www.tvmaze.com/people/1/mike-vogel',
     },
     {
       actorImgUrl:
         'https://static.tvmaze.com/uploads/images/medium_portrait/0/6.jpg',
-      actorName: 'Mike Vogel',
+      actorName: 'Mike Verde Vogel',
       characterName: 'Dale "Barbie" Barbara',
       actorBiographyUrl: 'https://www.tvmaze.com/people/2/rachelle-lefevre',
     },
     {
       actorImgUrl:
         'https://static.tvmaze.com/uploads/images/medium_portrait/0/7.jpg',
-      actorName: 'Mike Vogel',
+      actorName: 'Mike Garcia Vogel Espirito Santo',
       characterName: 'Dale "Barbie" Barbara',
       actorBiographyUrl: 'https://www.tvmaze.com/people/3/alexander-koch',
     },
