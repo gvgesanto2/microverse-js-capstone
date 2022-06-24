@@ -45,6 +45,6 @@
     "webpack-dev-server": "^4.9.1"
   },
   "dependencies": {
-    "hamburgers": "^1.2.1"
+    "axios": "^0.27.2"
   }
 }

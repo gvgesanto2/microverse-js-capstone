@@ -1,12 +1,26 @@
-import { createHtmlElement } from '../../utils/html.utils.js';
+import addHidingFeatureToView from '../../../decorators/hiding-feature.decorator.js';
 import CastGridView from './CastGridView.js';
-import ViewComponent from './ViewComponent.js';
+import ViewComponent from '../../ViewComponent.js';
+import { createHtmlElement } from '../../../../utils/html.utils.js';
 
 export default class TvShowCastSectionView extends ViewComponent {
   constructor(tvShowData, eventHandlersObj) {
     super();
     this.tvShowData = tvShowData;
     this.eventHandlersObj = eventHandlersObj;
+    this.isCastHidden = true;
+  }
+
+  handleToggleCastGrid = (castGridView, dropdownButton) => {
+    if (this.isCastHidden) {
+      castGridView.show();
+      dropdownButton.style.transform = 'rotate(90deg)';
+      this.isCastHidden = false;
+    } else {
+      castGridView.hide();
+      dropdownButton.style.transform = 'rotate(0)';
+      this.isCastHidden = true;
+    }
   }
 
   createHtmlElem = () => {
@@ -28,6 +42,9 @@ export default class TvShowCastSectionView extends ViewComponent {
       text: 'Cast',
     });
 
+    const castGridView = new CastGridView(cast);
+    addHidingFeatureToView(castGridView);
+
     const dropdownButton = createHtmlElement({
       tag: 'button',
       className: 'c-icon-btn',
@@ -40,7 +57,9 @@ export default class TvShowCastSectionView extends ViewComponent {
     `;
     dropdownButton.addEventListener(
       'click',
-      this.eventHandlersObj.handleToggleDropdown,
+      () => {
+        this.handleToggleCastGrid(castGridView, dropdownButton);
+      },
     );
 
     // Append the 'tvShowCastSectionHeader' children
@@ -49,8 +68,8 @@ export default class TvShowCastSectionView extends ViewComponent {
 
     // Append the 'tvShowCastSection' children
     tvShowCastSection.appendChild(tvShowCastSectionHeader);
-    this.castGridView = new CastGridView(cast);
-    this.castGridView.appendToParent(tvShowCastSection);
+    castGridView.appendToParent(tvShowCastSection);
+    castGridView.hide();
 
     return tvShowCastSection;
   };

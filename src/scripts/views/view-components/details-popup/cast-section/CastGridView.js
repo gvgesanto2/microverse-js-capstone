@@ -1,5 +1,5 @@
-import { createHtmlElement } from '../../utils/html.utils.js';
-import ViewComponent from './ViewComponent.js';
+import { createHtmlElement } from '../../../../utils/html.utils.js';
+import ViewComponent from '../../ViewComponent.js';
 
 export default class CastGridView extends ViewComponent {
   constructor(castItems) {
@@ -14,11 +14,21 @@ export default class CastGridView extends ViewComponent {
     });
 
     // Create and append the cast items to the 'castGrid'
-    this.castItems.forEach(({ actorImgUrl, actorName, characterName }) => {
-      const castGridItem = createHtmlElement({
+    this.castItems.forEach(({
+      actorImgUrl, actorName, characterName, actorBiographyUrl,
+    }) => {
+      const gridItem = createHtmlElement({
         tag: 'li',
+      });
+
+      const castItem = createHtmlElement({
+        tag: 'a',
         className: 'c-cast__item',
       });
+      castItem.href = actorBiographyUrl;
+      castItem.target = '_blank';
+      castItem.rel = 'noopener noreferrer';
+      castItem.ariaLabel = `See more about ${actorName}`;
 
       const actorImg = createHtmlElement({
         tag: 'img',
@@ -48,12 +58,15 @@ export default class CastGridView extends ViewComponent {
       castItemContent.appendChild(castItemActorName);
       castItemContent.appendChild(castItemCharacterName);
 
-      // Append the 'castGridItem' children
-      castGridItem.appendChild(actorImg);
-      castGridItem.appendChild(castItemContent);
+      // Append the 'castItem' children
+      castItem.appendChild(actorImg);
+      castItem.appendChild(castItemContent);
+
+      // Append the 'gridItem' child
+      gridItem.appendChild(castItem);
 
       // Append the 'castGrid' child
-      castGrid.appendChild(castGridItem);
+      castGrid.appendChild(gridItem);
     });
 
     return castGrid;

@@ -1,0 +1,28 @@
+.c-comment {
+  background-color: $color-gray-700;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__owner {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+    color: $color-white;
+    margin-right: 0.6rem;
+  }
+
+  &__date {
+    font-size: 1.1rem;
+    color: $color-gray-500;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    margin-top: 0.6rem;
+  }
+}
