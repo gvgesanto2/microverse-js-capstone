@@ -29,7 +29,7 @@ export default class InvolvementApiService {
     }
   };
 
-  createNewComment = async (comment) => {
-    await this.api.post(`apps/${this.appId}/comments`, comment);
+  createNewComment = async (comment, itemId) => {
+    await this.api.post(`apps/${this.appId}/comments?item_id=${itemId}`, comment);
   }
 }

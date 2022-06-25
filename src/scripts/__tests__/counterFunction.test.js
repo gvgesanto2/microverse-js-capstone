@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import showsNumber from './showsCount.js';
+import showsNumber from '../utils/showsCount.js';
 
 describe('showCounter', () => {
   test('result should be equal to 5', () => {
