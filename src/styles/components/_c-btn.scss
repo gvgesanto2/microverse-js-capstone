@@ -1,5 +1,6 @@
 .c-btn {
   @include centerWithFlex;
+
   text-align: center;
   font-family: inherit;
   font-size: 1.4rem;
@@ -11,7 +12,6 @@
   border-radius: 0.5rem;
   padding: 1rem 1.6rem;
   border: none;
-
   transition: all 0.2s ease 0s;
 
   &--primary {

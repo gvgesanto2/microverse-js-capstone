@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode production --config config/webpack.config.js",
     "start": "webpack serve --mode development --config config/webpack.config.js --open",
-    "test": "jest --coverage"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

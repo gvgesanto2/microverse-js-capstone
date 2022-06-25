@@ -14,7 +14,7 @@ export default class DetailsPopupView extends ViewComponent {
 
   createHtmlElem = () => {
     const {
-      title, premieredYear, status, rating, comments,
+      id, title, premieredDate, status, rating, comments,
     } = this.tvShowData;
 
     const popupContainer = createHtmlElement({
@@ -59,9 +59,9 @@ export default class DetailsPopupView extends ViewComponent {
       tag: 'ul',
       className: 'c-bullet-list',
     });
-    const premieredYearListItem = createHtmlElement({
+    const premieredDateListItem = createHtmlElement({
       tag: 'li',
-      text: premieredYear,
+      text: premieredDate,
     });
     const statusListItem = createHtmlElement({
       tag: 'li',
@@ -81,7 +81,7 @@ export default class DetailsPopupView extends ViewComponent {
     });
 
     // Append the 'bulletListWithTvShowInfos' children
-    bulletListWithTvShowInfos.appendChild(premieredYearListItem);
+    bulletListWithTvShowInfos.appendChild(premieredDateListItem);
     bulletListWithTvShowInfos.appendChild(statusListItem);
     bulletListWithTvShowInfos.appendChild(ratingListItem);
 
@@ -98,7 +98,7 @@ export default class DetailsPopupView extends ViewComponent {
     tvShowDescriptionSectionView.appendToParent(popupContent);
     const tvShowCastSectionView = new TvShowCastSectionView(this.tvShowData, this.eventHandlersObj);
     tvShowCastSectionView.appendToParent(popupContent);
-    this.commentsSectionView = new CommentsSectionView(comments, this.eventHandlersObj);
+    this.commentsSectionView = new CommentsSectionView(id, comments, this.eventHandlersObj);
     this.commentsSectionView.appendToParent(popupContent);
 
     // Append the 'popupWindow' children

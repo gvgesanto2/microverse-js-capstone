@@ -6,8 +6,9 @@ import ViewComponent from '../../ViewComponent.js';
 const NUM_COMMENTS_TO_SHOW_BY_DEFAULT = 3;
 
 export default class CommentsSectionView extends ViewComponent {
-  constructor(initialComments, eventHandlersObj) {
+  constructor(showId, initialComments, eventHandlersObj) {
     super();
+    this.showId = showId;
     this.initialComments = initialComments;
     this.eventHandlersObj = eventHandlersObj;
     this.commentsListView = null;
@@ -16,7 +17,7 @@ export default class CommentsSectionView extends ViewComponent {
     this.areThereCommentsHidden = false;
   }
 
-  #genCommentsCountText = (comments) => (comments.length === 0 ? 'No Comments' : `${comments.length} Comments`);
+  genCommentsCountText = (comments) => (comments.length === 0 ? 'No Comments' : `${comments.length} Comments`);
 
   createHtmlElem = () => {
     const commentsSections = createHtmlElement({
@@ -32,13 +33,14 @@ export default class CommentsSectionView extends ViewComponent {
     const commentsCount = createHtmlElement({
       tag: 'h3',
       className: 'c-comments__title',
-      text: this.#genCommentsCountText(this.initialComments),
+      text: this.genCommentsCountText(this.initialComments),
     });
     this.commentsCount = commentsCount;
 
     // Append the 'commentsSectionsHeader' children
     commentsSectionsHeader.appendChild(commentsCount);
     const addCommentFormView = new AddCommentFormView(
+      this.showId,
       this.eventHandlersObj.handleAddComment,
     );
     addCommentFormView.appendToParent(commentsSectionsHeader);
@@ -94,7 +96,7 @@ export default class CommentsSectionView extends ViewComponent {
       !this.areThereCommentsHidden,
     );
     this.commentsListView.appendToParent(this.htmlElem);
-    this.commentsCount.innerHTML = this.#genCommentsCountText(newComments);
+    this.commentsCount.innerHTML = this.genCommentsCountText(newComments);
 
     if (newComments.length > NUM_COMMENTS_TO_SHOW_BY_DEFAULT) {
       this.toggleCommentsBtn = this.#createToggleCommentsBtnElem();

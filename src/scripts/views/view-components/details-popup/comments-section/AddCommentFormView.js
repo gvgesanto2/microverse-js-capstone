@@ -2,8 +2,9 @@ import { createHtmlElement } from '../../../../utils/html.utils.js';
 import ViewComponent from '../../ViewComponent.js';
 
 export default class AddCommentFormView extends ViewComponent {
-  constructor(handleAddComment) {
+  constructor(showId, handleAddComment) {
     super();
+    this.showId = showId;
     this.handleAddComment = handleAddComment;
   }
 
@@ -22,6 +23,7 @@ export default class AddCommentFormView extends ViewComponent {
       const commentInput = event.target.elements.comment;
 
       this.handleAddComment({
+        id: this.showId,
         username: nameInput.value,
         comment: commentInput.value,
       });

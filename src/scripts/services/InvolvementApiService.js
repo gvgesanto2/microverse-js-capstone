@@ -10,12 +10,8 @@ export default class InvolvementApiService {
   }
 
   createNewApp = async () => {
-    try {
-      const response = await this.api.post('apps');
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+    const { data } = await this.api.post('apps');
+    return data;
   };
 
   getCommentsById = async (itemId) => {
@@ -29,7 +25,7 @@ export default class InvolvementApiService {
     }
   };
 
-  createNewComment = async (comment) => {
-    await this.api.post(`apps/${this.appId}/comments`, comment);
+  createNewComment = async (comment, itemId) => {
+    await this.api.post(`apps/${this.appId}/comments?item_id=${itemId}`, comment);
   }
 }
