@@ -1,0 +1,62 @@
+// Color Pallete
+$color-primary-100: #896ceb;
+$color-primary-300: #8257e5;
+$color-primary-400: #633bbc;
+$color-primary-700: #2d264a;
+
+$color-gray-150: #e7e5e5;
+$color-gray-200: #e1e1e6;
+$color-gray-300: #c1c7d0;
+$color-gray-400: #aaa;
+$color-gray-450: #909090;
+$color-gray-500: #808080;
+$color-gray-600: #606060;
+$color-gray-700: #3d3c42;
+$color-gray-750: #393838;
+$color-gray-800: #202024;
+$color-gray-900: #121214;
+$color-black: #000;
+$color-white: #fff;
+
+// Other color variables
+$color-text: $color-gray-200;
+$color-home-bg: $color-gray-900;
+$color-home-card-bg: $color-gray-700;
+
+// Other variables
+$separator-line--sm: 1px solid $color-gray-750;
+$separator-line--md: 2px solid $color-gray-750;
+
+// Breakpoints
+$breakpoints: (
+  // 20em = 320px
+  'screen-xxsm': 20em,
+  // 25em = 400px
+  'screen-xsm': 25em,
+  // 48em = 768px
+  'screen-sm': 48em,
+  // 100em = 1600px
+  'screen-hg': 100em,
+  // 160em = 2560px
+  'screen-xhg': 160em
+);
+
+$bp-types: (
+  'max': max-width,
+  'min': min-width,
+);
+
+// text variables
+$heading-font-family: 'Roboto';
+$paragraph-font-family: 'Roboto';
+$light: 300;
+$regular: 400;
+$semi-bold: 600;
+$bold: 700;
+$font-regular: 400;
+$mont-bold: 700;
+
+$text-movie-title:36px;
+$text-summary:12px;
+$text-action-btn:14px;
+$text-movie-description:12px;

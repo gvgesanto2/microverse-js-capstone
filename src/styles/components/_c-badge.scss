@@ -1,0 +1,15 @@
+.c-badge {
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  background-color: #ebebff;
+  background-color: #6070ff;
+  background-color: #633bbc;
+  color: #6070ff;
+  color: $color-white;
+  color: $color-text;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.8rem;
+}

@@ -1,0 +1,12 @@
+.c-icon-btn {
+  @include centerWithFlex;
+
+  border: none;
+  background: transparent;
+  color: $color-text;
+  padding: 0.8rem;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

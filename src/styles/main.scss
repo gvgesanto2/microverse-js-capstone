@@ -1,0 +1,27 @@
+// Import variables and functions
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// Import Base styles
+@import 'base';
+
+// Import components classes
+@import 'components/c-details-window';
+@import 'components/c-icon';
+@import 'components/c-icon-btn';
+@import 'components/c-bullet-list';
+@import 'components/c-tvshow-description';
+@import 'components/c-badge';
+@import 'components/c-cast';
+@import 'components/c-comments';
+@import 'components/c-form';
+@import 'components/c-btn';
+@import 'components/c-data-input';
+@import 'components/c-comment';
+@import './abstracts/respaldo.scss';
+
+// Import the layout classes
+@import 'layout';
+
+// Import the utilities classes
+@import 'utilities';
