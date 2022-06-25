@@ -1,9 +1,13 @@
 .c-comments {
+  max-width: 70rem;
+  margin: 0 auto;
+
   &__header {
     margin-bottom: 3.2rem;
   }
 
   &__title {
+    text-align: center;
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 2.2rem;
