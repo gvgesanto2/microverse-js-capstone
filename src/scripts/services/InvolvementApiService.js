@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 
 export default class InvolvementApiService {
@@ -21,6 +22,7 @@ export default class InvolvementApiService {
       );
       return data;
     } catch (error) {
+      console.clear();
       return [];
     }
   };

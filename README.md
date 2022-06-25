@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To-Do List
+# Streamy App
 
 > This is a TV show catalog application built using the TvMaze API.
 
