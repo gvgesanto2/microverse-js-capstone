@@ -1,6 +1,4 @@
-/**
- * @jest-environment jsdom
- */
+
 import showsNumber from './showsCount.js';
 
 describe('showCounter', () => {
