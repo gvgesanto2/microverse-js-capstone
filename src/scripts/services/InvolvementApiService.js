@@ -10,12 +10,8 @@ export default class InvolvementApiService {
   }
 
   createNewApp = async () => {
-    try {
-      const response = await this.api.post('apps');
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
+    const { data } = await this.api.post('apps');
+    return data;
   };
 
   getCommentsById = async (itemId) => {

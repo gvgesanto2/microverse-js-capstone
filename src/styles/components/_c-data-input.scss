@@ -1,7 +1,19 @@
 .c-data-input {
   position: relative;
-  padding-bottom: .35rem;
+  padding-bottom: 0.35rem;
   border-bottom: 1px solid $color-gray-450;
+
+  &__line {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    border-radius: 0.5px;
+    background: $color-primary-300;
+    margin-top: -1px;
+    transition: all 0.3s;
+  }
 
   &__input {
     width: 100%;
@@ -13,32 +25,17 @@
     background: transparent;
     border: none;
 
+    &::-webkit-input-placeholder {
+      color: $color-gray-400;
+    }
+
     &:focus {
       outline: none;
     }
 
-    &:focus+.c-data-input__line {
+    &:focus + .c-data-input__line {
       left: 0;
       width: 100%;
     }
-
-    &::-webkit-input-placeholder {
-      color: $color-gray-400;
-    }
   }
-
-  &__line {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    height: 2px;
-    width: 0;
-    border-radius: .5px;
-    background: $color-primary-300;
-    margin-top: -1px;
-
-    transition: all .3s;
-  }
-
 }
-
